@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agustin Fiori</title>
+
+  <!--css-->>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="estilo.css">
+
+
+</head>
+
+<body>
+
+  <nav>
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a class="nav-link active" href="index.html">Principal</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="#">Sobre</a>
+      </li>
+    </ul>>
+  </nav>
+
+  <div class="container">
+    <form>
+      
+      <h4>Contato</h4>
+      <div class="form-group">
+        
+        <div class="alert alert-danger" id="alert-erro">
+          <h4>Preencha corretamente os campos</h4>
+        </div>
+        <div class="alert alert-success" id="alert-sucesso">
+          <h4>Dados enviados com sucesso!</h4>
+
+        </div>
+
+      </div>
+
+      <div class="form-group">
+        <label>Nome</label>
+        <input class="form-control" type="text" id="nome">
+      </div>
+
+      <div class="form-group">
+        <label>Telefone</label>
+        <input class="form-control" type="text" placeholder="(48) 99999-9999" id="telefone">
+      </div>
+      <div class="form-group">
+        <label>E-mail</label>
+        <input class="form-control" type="email" placeholder="nome@empresa.com" id="email">
+      </div>
+
+      <div class="form-group" onclick="enviar()">
+        <button type="reset" class="btn btn-secondary">
+          Cancelar
+        </button>
+
+        <button type="button" onclick="enviar()" 
+            class="btn btn-success">
+          Concluir
+        </button>
+
+      </div>
+
+
+    </form>
+  </div>
+  <script>
+    const enviar = function(){
+        let nome = document.getElementById('nome').value
+        let telefone = document.getElementById('telefone').value
+        let email = document.getElementById('email').value
+        let erro = false
+     
+     
+      if (nome== "" ){
+        erro = true
+      }
+
+      if (telefone == ""){
+        erro = true
+      }
+
+      if (email == ""){
+        erro = true
+      }
+
+      if (erro){
+        document.getElementById('alert-erro').style.display = "block"
+        document.getElementById('alert-sucesso').style.display = "none"
+      } else {
+          document.getElementById('alert-erro').style.display = "none"
+          document.getElementById('alert-sucesso').style.display = "block"
+      }
+
+      const limpar =function(){
+        document.getElementById('alert-erro').style.display = "none"
+          document.getElementById('alert-sucesso').style.display = "block"
+
+      }
+    }
+  </script>
+</body>
+
+</html>

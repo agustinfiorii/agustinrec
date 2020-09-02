@@ -1,0 +1,35 @@
+h4{
+        text-align: center;
+        color:rgb(29, 0, 194);
+}
+
+form{
+    background:rgb(218, 218, 218) ;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 10px;
+    width: 40%;
+    margin: auto;
+    margin-top: 25px;
+}
+
+
+.form-group{
+    padding: 10px;
+}
+
+button{
+    width: 48%;
+}
+
+@media screen and (max-width:400px){
+    form{
+        width: 50%;}
+}
+
+@media screen and (max-width:400px){
+    form{ width: 80%;}
+}
+
+.alert{
+    display: none;
+}
